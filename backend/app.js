@@ -4,7 +4,13 @@ const { spawnSync } = require("child_process");
 require("dotenv").config();
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL || "*", // safer than '*', but defaults to it
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 
 // Utility function to run Python scripts
