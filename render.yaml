@@ -1,0 +1,36 @@
+services:
+  - type: web
+    name: yt-backend
+    runtime: node
+    buildCommand: |
+      npm install
+      pip install -r requirements.txt
+    startCommand: node app.js
+    envVars:
+      - key: PORT
+        value: 5000
+      - key: OPENROUTER_API_KEY_QUIZ
+        sync: false
+      - key: OPENROUTER_API_KEY_SUMMARY
+        sync: false
+      - key: ASSEMBLYAI_API_KEY
+        sync: false
+      - key: MODEL_SUMMARY
+        sync: false
+      - key: MODEL_QUIZ
+        sync: false
+      - key: REDIS_URL
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
+    buildFilter:
+      paths:
+        - app.js
+        - fetch_transcript.py
+        - assemblyai_transcribe.py
+        - check_educational.py
+        - summarizer.py
+        - quizzify.py
+        - package.json
+        - requirements.txt
+        - .env
