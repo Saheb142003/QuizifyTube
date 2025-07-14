@@ -1,0 +1,6 @@
+# server/requirements.txt
+youtube-transcript-api
+python-dotenv
+openai
+requests
+openai-whisper

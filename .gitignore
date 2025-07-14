@@ -1,0 +1,37 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+# environment files
+backend/.env
+frontend/.env
+
+# modules directories
+backend/node_modules
+frontend/node_modules
+
+# files
+backend/assemblyai_transcribe.py
+backend/extract_youtube_keywords.py
+backend/extract_youtube_keywords.py
+backend/whisper_transcribe.py
