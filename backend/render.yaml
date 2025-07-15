@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: quizifytube-backend
+    runtime: node
+    region: oregon
+    buildCommand: |
+      npm install
+      pip install -r requirements.txt
+    startCommand: node app.js
+    envVars:
+      - key: PORT
+        value: 5000
+      - key: OPENROUTER_API_KEY_SUMMARY
+        value: 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
+      - key: OPENROUTER_API_KEY_QUIZ
+        value: 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
+      - key: ASSEMBLYAI_API_KEY
+        value: 6f89fa8113c94849b4c7638862e2df0c
+      - key: MODEL_SUMMARY
+        value: mistralai/mistral-7b-instruct
+      - key: MODEL_QUIZ
+        value: mistralai/mixtral-8x7b-instruct
+      - key: REDIS_URL
+        value: redis://localhost:6379
+      - key: FRONTEND_URL
+        value: http://localhost:3000
