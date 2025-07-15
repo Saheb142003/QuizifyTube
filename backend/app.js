@@ -26,6 +26,11 @@ const runPython = (script, args = []) => {
   return { stdout, stderr };
 };
 
+app.get("/",(req,resp)=>{
+  console.log("server is running on render",process.env.FRONTEND_URL);
+})
+
+
 // ========== /analyze ==========
 app.post("/analyze", (req, res) => {
   const { url } = req.body;
