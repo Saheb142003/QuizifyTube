@@ -28,6 +28,7 @@ const runPython = (script, args = []) => {
 
 app.get("/",(req,resp)=>{
   console.log("server is running on render",process.env.FRONTEND_URL);
+  resp.send("hello world")
 })
 
 
